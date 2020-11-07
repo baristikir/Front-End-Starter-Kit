@@ -10,9 +10,9 @@ Run this while developing, for reloading the stylesheets and so on.
 ```sh
 $ gulp
 ```
-###Directories
-`./src` - All `.scss`styles are stored in the `/styles` folder. Every Javascript file finds place in the `./scripts` folder. For External Libraries and components use the `/vendor` directories inside these.
-`./build` - Compiled and Minified `.css` - stylesheets and `.js` files finding place there.
+### Directories
+**`./src`** - All `.scss`styles are stored in the `/styles` folder. Every Javascript file finds place in the `./scripts` folder. For External Libraries and components use the `/vendor` directories inside these.<br>
+**`./build`** - Compiled and Minified `.css` - stylesheets and `.js` files finding place there.
 
 ## Build System :package:
 Using Gulp for the Build System of `SCSS` to `CSS` and `JS` within the minified versions.
