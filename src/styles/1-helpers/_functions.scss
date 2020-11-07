@@ -1,0 +1,12 @@
+@function pxToEm($px, $base: 16) {
+    @return ($px / $base) * 1em;
+}
+
+@function tint($color, $percent){
+    @return mix(white, $color, $percent);
+}
+
+@function shade($color, $percent){
+    @return mix(black, $color, $percent);
+}
+  

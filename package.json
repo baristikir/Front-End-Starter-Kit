@@ -1,0 +1,17 @@
+{
+  "name": "frontend-scss-starter",
+  "version": "1.0.0",
+  "description": "Front-End Starter Kit with HTML,SCSS & JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Baris Tikir",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "gulp-scss": "^1.4.0",
+    "gulp-uglifycss": "^1.1.0"
+  }
+}

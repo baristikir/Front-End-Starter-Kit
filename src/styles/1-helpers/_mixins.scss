@@ -1,0 +1,226 @@
+// ********** //
+// * MIXINS * //
+// ********** //
+// * Media Query Directions * //
+$min-media-direction: min;
+$max-media-direction: max;
+// * Breakpoints * //
+$breakpoints: (
+    'xs':  480px,
+    's':   667px,
+    'm':   994px,
+    'l':   1280px,
+    'xl':  1680px,
+);
+@mixin breakpoint-up($size, $direction: $min-media-direction) {
+
+    @if map-has-key($breakpoints, $size) {
+        @media (#{$direction}-width: #{map-get($breakpoints, $size)}) {
+            @content;
+        }
+    }
+    @else if unitless($size) {
+        $size: $size + 0px;
+
+        @media (#{$direction}-width: $size) {
+            @content;
+        }
+    }
+}
+@mixin breakpoint-down($size, $direction: $max-media-direction) {
+
+    @if map-has-key($breakpoints, $size) {
+        @media (#{$direction}-width: #{map-get($breakpoints, $size)}) {
+            @content;
+        }
+    }
+    @else if unitless($size) {
+        $size: $size + 0px;
+
+        @media (#{$direction}-width: $size) {
+            @content;
+        }
+    }
+}
+
+
+// * Transition * //
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+
+// * Transform * //
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    transform:         $transform;
+}
+
+
+// * Box-Shadow * //
+@mixin box-shadow($box-shadow) {
+    -webkit-box-shadow: $box-shadow;
+    box-shadow:         $box-shadow;
+}
+
+
+// * Font Sizes * //
+/* --[USAGE]--
+    @include font-size(12, 18, 1.2);
+    <- returns underneath ->
+    font-size: 12px;
+    line-height: 1.5; // 18 / 12
+    letter-spacing: 0.1em; */
+@mixin font-size($font-size, $line-height: normal, $letter-spacing: normal) {
+    font-size: $font-size * 1px;
+    // font-size: $font-size * 0.1rem;
+    // example using rem values and 62.5% font-size so 1rem = 10px
+
+    @if $line-height==normal {
+        line-height: normal;
+    } @else {
+        line-height: $line-height / $font-size;
+    }
+
+    @if $letter-spacing==normal {
+        letter-spacing: normal;
+    } @else {
+        letter-spacing: #{$letter-spacing / $font-size}em;
+    }
+}
+
+
+// * Flex * //
+@mixin display-flex {                       /* Generic Flexbox for multi browser support */
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/* Flexbox Layouts */
+@mixin flex-column {                        /* Flexbox grid layout for column */
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex-center {                        /* Aligning Content inside Flexbox in the center */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex-center-column {                 /* Flexbox grid layout for column with centered content */
+    @include flex-center;
+    flex-direction: column;
+} 
+@mixin flex-center-vert {                   /* Aligning Items inside Flexbox vertically */
+    display: flex;
+    align-items: center;                
+}
+@mixin flex-center-horiz {                  /* Aligning Items inside Flexbox horizontally */ 
+    display: flex;
+    justify-content: center;        
+}
+
+
+// * Background Covering * //
+/* [USAGE]
+    background-image: url("cute-doggo.png"); 
+    @include cover-background; */
+@mixin cover-background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+// * Square Box Style * //
+@mixin box($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+// * Heights & Widths * //
+@mixin min-height($height){
+    min-height: $height;
+    height: auto !important;
+    @if $lte7{
+      _height: $height;
+    }
+}
+
+
+
+
+// * Templates * //
+/* Define Simple styles of some common elements (btn, table, form) */
+
+// btn
+// @include simple-btn;
+// @include simple-btn(true);
+// @include simple-btn($bgColor:$green);
+@mixin simple-btn($formbtn:false, $bgColor: $primary, $textColor:$white){
+    @include inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    text-align: center;
+  
+    font-size: 12px;
+    padding:0  15px;
+    @if $formbtn {
+      height: 28px;
+    }@else{
+      line-height: 28px;
+    }
+    color: $textColor;
+    background-color: $bgColor;
+    border:0 none;
+  
+    &:hover{
+      color: $textColor;
+      background-color: darken($bgColor,5%);
+    }
+  }
+
+
+// table
+// @include simple-table;
+// @include simple-table(false);
+// @include simple-table(true, $thBgColor: $orange);
+@mixin simple-table($th:true, $borderColor: $gray, $thBgColor: $primary, $thTextColor:$white){
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: $baseGap;
+  
+    & th,
+    & td{
+      border:1px solid $borderColor;
+    }
+  
+    th,td{
+      padding: 8px;
+      text-align: left;
+    }
+    // 如果
+    @if $th{
+      th{
+        color: $thTextColor;
+        background-color: $thBgColor;
+        border-color:$thBgColor;
+        border-bottom:0 none;
+      }
+    }
+}
+
+@mixin simple-text($borderColorFocus: #52a8ec){
+    @extend %simple-form-basic;
+    height: 18px;
+    
+    @include transition(border linear 0.2s, box-shadow linear 0.2s);
+    @include box-shadow(inset 0 1px 3px rgba(0, 0, 0, 0.1));
+  
+    &:focus{
+      border-color: rgba($borderColorFocus, 0.8);
+      @include box-shadow(inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba($borderColorFocus, 0.6));
+    }  
+}

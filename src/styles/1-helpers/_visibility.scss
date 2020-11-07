@@ -1,0 +1,14 @@
+// ************** // 
+// * Visibility * //
+// ************** //
+.hide-for-mobile {
+    @include breakpoint-down(m){
+      display: none;
+    }
+}
+  
+.hide-for-desktop {
+    @include breakpoint-up(l){
+      display: none;
+    }
+}

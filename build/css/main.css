@@ -1,0 +1,131 @@
+/* For compatibility IE 6-7 */
+/* For setting the filter compatibility for IE 6-8 up, gradient background purposes - css3*/
+/* Link Color */
+/* Scaffolding */
+/* Scaffolding */
+/* Placeholder Text For Inputs */
+/* Base Border Radius */
+/* Small Border Radius */
+/* Z-Index For Dropdown Menus */
+/* Z-Index For Fixed Top Bar */
+/* Z-Index For Hover Tooltips */
+/* Z-Index For Alert Messages */
+/* Z-Index For Modal Popups */
+/* --[USAGE]--
+    @include font-size(12, 18, 1.2);
+    <- returns underneath ->
+    font-size: 12px;
+    line-height: 1.5; // 18 / 12
+    letter-spacing: 0.1em; */
+/* Flexbox Layouts */
+/* [USAGE]
+    background-image: url("cute-doggo.png"); 
+    @include cover-background; */
+/* Define Simple styles of some common elements (btn, table, form) */
+.box-shadow {
+  -webkit-box-shadow: 0px 0px 25px #00000040;
+  box-shadow: 0px 0px 25px #00000040; }
+
+@media (max-width: 994px) {
+  .hide-for-mobile {
+    display: none; } }
+
+@media (min-width: 1280px) {
+  .hide-for-desktop {
+    display: none; } }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh; }
+
+a, a:visited, a:link {
+  text-decoration: none;
+  /* Resetting `a` Tag Text Decoration (Underlining) */ }
+
+body {
+  font-size: 14px;
+  /* Default Base Style */
+  line-height: 1.5;
+  /* Default Base Style */
+  color: #333;
+  /* Default Base Style */
+  background-color: #fff;
+  /* Default Base Style */
+  overflow-x: hidden;
+  /* Disabling Scrolling - For X Axis */ }
+  body.no-scroll {
+    overflow: hidden;
+    /* Disabling Scrolling - For X,Y Axis */ }
+
+html {
+  font-family: sans-serif;
+  /* Set default font family to sans-serif */
+  -ms-text-size-adjust: 100%;
+  /* Prevent iOS text size adjust after orientation change, without disabling user zoom. */
+  -webkit-text-size-adjust: 100%;
+  /* Prevent iOS text size adjust after orientation change, without disabling user zoom. */
+  overflow-y: scroll;
+  /* Core Style */
+  -webkit-overflow-scrolling: touch;
+  /* Core Style */ }
+
+body {
+  margin: 0;
+  /* Remove default margin */ }
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* Correct `inline-block` display not defined in IE 8/9. */
+  vertical-align: baseline;
+  /* Normalize vertical alignment of `progress` in Chrome, Firefox and Opera. */
+  *display: inline;
+  /* Corrent `inline-block` display IE 6/7 */
+  *zoom: 1;
+  /* Corrent `inline-block` display IE 6/7 */ }
+
+audio:not([controls]) {
+  /* Prevent modern browsers from displaying `audio` without controls */
+  display: none;
+  /* Remove excess height in iOS 5 devices. */
+  height: 0; }
+
+[hidden],
+template {
+  display: none;
+  /* Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22. */ }
+
+a {
+  background: transparent;
+  /* Remove the gray background color from active links in IE 10. */ }
+  a:active, a:hover {
+    outline: 0;
+    /* Improve readibility when focused and also mouse hovered in all browsers. */ }
+
+img {
+  border: 0;
+  /* Remove border when inside `a` element in IE 8/9/10. */
+  vertical-align: middle;
+  /* Align By Default Centered  */
+  -ms-interpolation-mode: bicubic;
+  /* Improve image quality when scaled in IE 7. */ }
+
+svg:not(:root) {
+  /* Correct overflow not hidden in IE 9/10/11. */
+  overflow: hidden; }
+
+ol, ul {
+  list-style: none;
+  /* Remove List Style globally. */ }

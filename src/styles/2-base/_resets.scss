@@ -1,0 +1,66 @@
+// ****************************** //
+// * Global HTML Element Resets * //
+// ****************************** //
+// * Globals * //
+html {
+    font-family: sans-serif;            /* Set default font family to sans-serif */
+    -ms-text-size-adjust: 100%;         /* Prevent iOS text size adjust after orientation change, without disabling user zoom. */
+    -webkit-text-size-adjust: 100%;     /* Prevent iOS text size adjust after orientation change, without disabling user zoom. */
+    overflow-y: scroll;                 /* Core Style */
+    -webkit-overflow-scrolling: touch;  /* Core Style */
+}
+
+body {
+    margin: 0;                          /* Remove default margin */
+}
+
+// * Multi Browser Supports * //
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;                /* Correct `inline-block` display not defined in IE 8/9. */
+  vertical-align: baseline;             /* Normalize vertical alignment of `progress` in Chrome, Firefox and Opera. */
+
+  @if $lte7 {
+    *display: inline;                   /* Corrent `inline-block` display IE 6/7 */
+    *zoom: 1;                           /* Corrent `inline-block` display IE 6/7 */
+  }
+}
+
+audio:not([controls]) {                 /* Prevent modern browsers from displaying `audio` without controls */
+    display: none;                      /* Remove excess height in iOS 5 devices. */
+    height: 0;
+}
+
+[hidden],                               /* Address `[hidden]` styling not present in IE 8/9/10. */
+template {                              
+  display: none;                        /* Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22. */
+}
+
+a{
+    background: transparent;            /* Remove the gray background color from active links in IE 10. */
+
+    &:active,
+    &:hover{
+        outline: 0;                     /* Improve readibility when focused and also mouse hovered in all browsers. */
+    }
+}
+
+
+img {
+    border: 0;                          /* Remove border when inside `a` element in IE 8/9/10. */
+    vertical-align: middle;             /* Align By Default Centered  */
+  
+    @if $lte7 {
+      -ms-interpolation-mode: bicubic;  /* Improve image quality when scaled in IE 7. */
+    }
+}
+
+svg:not(:root) {                        /* Correct overflow not hidden in IE 9/10/11. */
+    overflow: hidden;
+}
+
+ol, ul {
+    list-style: none;                   /* Remove List Style globally. */
+} 

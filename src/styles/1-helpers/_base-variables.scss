@@ -1,0 +1,57 @@
+
+// * Font - Typeface * //
+$baseFontSize:          14px !default;
+$baseLineHeight:        1.5 !default;
+$baseFontFamily:        "Helvetica Neue", Helvetica, Tahoma, sans-serif !default;
+
+
+// * IE Switches * //
+$lte7:                  true !default;      /* For compatibility IE 6-7 */
+$filter:                false !default;     /* For setting the filter compatibility for IE 6-8 up, gradient background purposes - css3*/
+$printStyleSwitch:      false !default;
+
+
+// * Element Top and Bottom Spacing * //
+$baseGap:               20px !default;
+
+
+// * Colors * //
+$black:                 #000 !default;
+$grayDarker:            #333 !default;
+$grayDark:              #999 !default;
+$gray:                  #ccc !default;
+$grayLight:             #f5f5f5 !default;
+$white:                 #fff !default;
+$red:                   #cc3300 !default;
+$blue:                  #00A3CF !default;
+$blueDark:              #0064cd !default;
+$orange:                #F47837 !default;
+$green:                 #51B148 !default;
+$yellow:                #ffc40d !default;
+$pink:                  #c3325f !default;
+$purple:                #7a43b6 !default;
+
+$primary:               #0078E7 !default;
+
+// -----
+$linkColor:             #08c !default;     /* Link Color */
+
+$bodyBgColor:           $white !default;     /* Scaffolding */
+$textColor:             $grayDarker !default;/* Scaffolding */
+
+
+// * Input Placeholder * //
+$placeholder:           true $gray !default; /* Placeholder Text For Inputs */
+
+
+// * Border Radius * //
+$baseRadius:            5px !default;       /* Base Border Radius */
+$smallRadius:           3px !default;       /* Small Border Radius */
+
+
+// * Z-Index * //
+$zindexDropdown:        1000 !default;      /* Z-Index For Dropdown Menus */ 
+$zindexFixedTopbar:     1010 !default;      /* Z-Index For Fixed Top Bar */
+$zindexTooltip:         1020 !default;      /* Z-Index For Hover Tooltips */
+$zindexAlert:           1030 !default;      /* Z-Index For Alert Messages */
+$zindexModal:           1100 !default;      /* Z-Index For Modal Popups */

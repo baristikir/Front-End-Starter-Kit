@@ -1,0 +1,6 @@
+// ********************** //
+// * Global Box Shadows * //
+// ********************** //
+.box-shadow{
+    @include box-shadow(0px 0px 25px #00000040);
+}
